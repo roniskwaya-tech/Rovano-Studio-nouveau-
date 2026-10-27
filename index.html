@@ -1,0 +1,473 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101010">
+<meta name="description" content="Rovano Studio : chansons personnalisées, poèmes, création graphique et cadeaux personnalisés au Cameroun. Donnez vie à vos idées.">
+<title>Rovano Studio | Vos idées prennent vie</title>
+
+<style>
+:root {
+  --bg:#101010;
+  --panel:#191919;
+  --panel2:#202020;
+  --gold:#d8b36a;
+  --gold-light:#f5dfaa;
+  --white:#fffaf0;
+  --muted:#bcb8af;
+  --line:rgba(216,179,106,.23);
+  --radius:20px;
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  margin:0;
+  background:var(--bg);
+  color:var(--white);
+  font-family:Arial,Helvetica,sans-serif;
+  line-height:1.65;
+}
+a { color:inherit; text-decoration:none; }
+button,input,select,textarea { font:inherit; }
+button,.btn { cursor:pointer; }
+.wrap { width:min(1120px,92%); margin:auto; }
+section { padding:76px 0; scroll-margin-top:85px; }
+header {
+  position:sticky; top:0; z-index:20;
+  background:rgba(16,16,16,.96);
+  border-bottom:1px solid var(--line);
+  backdrop-filter:blur(12px);
+}
+.nav {
+  min-height:72px; display:flex; align-items:center;
+  justify-content:space-between; gap:20px;
+}
+.logo { font-size:20px; font-weight:900; letter-spacing:1px; }
+.logo span,.gold { color:var(--gold); }
+nav { display:flex; gap:20px; align-items:center; }
+nav a { color:var(--muted); font-size:14px; }
+nav a:hover { color:var(--gold-light); }
+.menu-btn {
+  display:none; background:transparent; color:var(--white);
+  border:1px solid var(--line); padding:8px 12px; border-radius:10px;
+}
+.btn {
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:13px 19px; border-radius:12px; font-weight:700;
+  border:1px solid var(--gold); transition:.2s;
+}
+.btn-primary { background:var(--gold); color:#17130b; }
+.btn-outline { color:var(--gold-light); background:transparent; }
+.btn:hover { transform:translateY(-2px); }
+.hero {
+  padding:85px 0 72px;
+  background:
+    radial-gradient(ellipse at 80% 20%,rgba(216,179,106,.12),transparent 42%),
+    linear-gradient(135deg,#111,#181612);
+}
+.hero-grid {
+  display:grid; grid-template-columns:1.2fr .8fr;
+  align-items:center; gap:45px;
+}
+.eyebrow {
+  color:var(--gold); text-transform:uppercase;
+  letter-spacing:2px; font-size:12px; font-weight:800;
+}
+h1 { font-size:clamp(38px,6vw,68px); line-height:1.08; margin:16px 0; }
+h2 { font-size:clamp(28px,4vw,42px); line-height:1.2; margin:10px 0 16px; }
+h3 { line-height:1.3; }
+p { color:var(--muted); }
+.hero p { font-size:17px; max-width:620px; }
+.actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:25px; }
+.hero-art {
+  min-height:350px; border:1px solid var(--line); border-radius:28px;
+  padding:30px; display:flex; flex-direction:column;
+  justify-content:center; align-items:center; text-align:center;
+  background:linear-gradient(145deg,#27231a,#141414 70%);
+  box-shadow:0 25px 70px #0005;
+}
+.music-icon {
+  width:100px; height:100px; border-radius:50%;
+  display:grid; place-items:center; font-size:43px;
+  color:var(--gold); border:1px solid var(--gold);
+  background:#d8b36a12; margin-bottom:20px;
+}
+.hero-art strong { font-size:25px; }
+.hero-art small { color:var(--muted); }
+.trust-strip {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:12px; margin-top:35px;
+}
+.trust-item { padding:15px; border:1px solid var(--line); border-radius:13px; }
+.trust-item strong { display:block; color:var(--gold-light); font-size:14px; }
+.trust-item span { color:var(--muted); font-size:12px; }
+.section-head { max-width:700px; margin-bottom:32px; }
+.section-head.center { text-align:center; margin-left:auto; margin-right:auto; }
+.card-grid {
+  display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px;
+}
+.card {
+  border:1px solid var(--line); background:var(--panel);
+  border-radius:var(--radius); padding:23px;
+}
+.card p { font-size:14px; }
+.card h3 { margin:12px 0 8px; font-size:19px; }
+.service-icon { font-size:27px; }
+.service-card { display:flex; flex-direction:column; align-items:flex-start; }
+.service-card .price { margin-top:auto; padding-top:12px; }
+.price { color:var(--gold-light); font-weight:800; }
+.price small { font-size:12px; color:var(--muted); font-weight:400; }
+.featured {
+  border-color:var(--gold);
+  background:linear-gradient(150deg,#292216,#191919 70%);
+}
+.tag {
+  display:inline-block; font-size:11px; letter-spacing:1px;
+  color:#19140b; background:var(--gold);
+  padding:5px 9px; border-radius:20px; font-weight:800;
+}
+.featured-song {
+  display:grid; grid-template-columns:1fr 1fr; gap:28px;
+  align-items:center; border:1px solid var(--line);
+  padding:30px; border-radius:24px;
+  background:linear-gradient(120deg,#201c14,#171717);
+}
+.song-list { display:grid; gap:12px; }
+.song-row {
+  border:1px solid var(--line); border-radius:14px;
+  padding:15px; background:#111; display:flex;
+  align-items:center; justify-content:space-between; gap:10px;
+}
+.song-row strong { display:block; font-size:14px; }
+.song-row small { color:var(--muted); }
+.song-row audio { width:100%; max-width:220px; height:34px; }
+.price-grid {
+  display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px;
+}
+.price-card { position:relative; }
+.big-price { color:var(--gold-light); font-size:35px; font-weight:900; margin:10px 0; }
+.price-card ul { padding-left:20px; color:var(--muted); }
+.steps { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.step-number {
+  color:var(--gold); font-size:28px; font-weight:900;
+}
+form { display:grid; gap:14px; }
+.form-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+label { display:block; font-size:13px; color:var(--gold-light); margin-bottom:5px; }
+input,select,textarea {
+  width:100%; color:var(--white); background:#101010;
+  border:1px solid #494238; border-radius:11px; padding:13px;
+}
+textarea { min-height:115px; resize:vertical; }
+input:focus,select:focus,textarea:focus {
+  outline:1px solid var(--gold); border-color:var(--gold);
+}
+select option { background:#171717; }
+.form-note { font-size:12px; }
+.review-box {
+  max-width:760px; margin:auto; padding:28px;
+  border:1px solid var(--line); background:var(--panel);
+  border-radius:var(--radius);
+}
+.review-status {
+  border:1px dashed var(--line); border-radius:14px;
+  padding:20px; color:var(--muted); margin:20px 0;
+}
+.faq-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+details {
+  background:var(--panel); border:1px solid var(--line);
+  border-radius:14px; padding:17px;
+}
+summary { cursor:pointer; font-weight:700; }
+details p { font-size:14px; }
+.cta {
+  text-align:center; padding:45px 25px;
+  border:1px solid var(--line); border-radius:25px;
+  background:radial-gradient(ellipse at center,#302515,#171717 70%);
+}
+footer { border-top:1px solid var(--line); padding:30px 0; }
+.footer-inner { display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+footer p { font-size:12px; }
+.whatsapp-float {
+  position:fixed; right:18px; bottom:18px; z-index:30;
+  background:#d8b36a; color:#17130b; padding:13px 17px;
+  border-radius:30px; font-weight:800; box-shadow:0 8px 30px #0007;
+}
+.hidden { display:none !important; }
+
+@media(max-width:800px) {
+  nav {
+    display:none; position:absolute; top:72px; left:0; right:0;
+    background:#141414; padding:20px; flex-direction:column;
+    align-items:stretch; border-bottom:1px solid var(--line);
+  }
+  nav.open { display:flex; }
+  .menu-btn { display:block; }
+  .hero-grid,.featured-song { grid-template-columns:1fr; }
+  .hero-art { min-height:260px; }
+  .card-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .steps { grid-template-columns:1fr; }
+}
+@media(max-width:520px) {
+  section { padding:55px 0; }
+  .card-grid,.price-grid,.form-grid,.faq-grid { grid-template-columns:1fr; }
+  .trust-strip { grid-template-columns:1fr; }
+  .hero { padding-top:55px; }
+  .hero-art { min-height:230px; }
+  .card { padding:19px; }
+  .song-row { align-items:flex-start; flex-direction:column; }
+  .song-row audio { max-width:100%; }
+  .review-box { padding:19px; }
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#accueil">ROVANO <span>STUDIO</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu">☰</button>
+    <nav id="mainNav">
+      <a href="#chansons">Chansons</a>
+      <a href="#services">Nos services</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#avis">Avis clients</a>
+      <a href="#devis" class="btn btn-primary">Demander un devis</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="accueil">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Créativité • Émotion • Personnalisation</div>
+      <h1>Vos idées<br>prennent <span class="gold">vie.</span></h1>
+      <p>Un cadeau qui raconte votre histoire. Une image qui valorise votre activité. Chez Rovano Studio, nous transformons vos idées en créations personnalisées pour les personnes et les entreprises.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#devis">Créer mon projet</a>
+        <a class="btn btn-outline" href="#services">Découvrir nos services</a>
+      </div>
+      <div class="trust-strip">
+        <div class="trust-item"><strong>Sur mesure</strong><span>Créations adaptées à votre besoin</span></div>
+        <div class="trust-item"><strong>Pour vos moments</strong><span>Anniversaire, mariage, famille</span></div>
+        <div class="trust-item"><strong>Pour vos projets</strong><span>Communication et design</span></div>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="music-icon">♫</div>
+      <strong>Votre histoire en chanson</strong>
+      <p>Un prénom, des souvenirs, un message : créons une chanson pensée pour la personne qui compte pour vous.</p>
+      <small>À offrir pour un anniversaire, un mariage, une déclaration ou toute occasion spéciale.</small>
+    </div>
+  </div>
+</section>
+
+<section id="chansons">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Notre création phare</div>
+      <h2>Offrez une émotion, pas un cadeau ordinaire.</h2>
+      <p>Imaginez la surprise d'un proche qui entend son prénom, vos souvenirs et votre message dans une chanson créée spécialement pour lui. Vous nous racontez votre histoire ; nous préparons une création personnalisée selon votre demande.</p>
+    </div>
+    <div class="featured-song">
+      <div>
+        <span class="tag">SERVICE VEDETTE</span>
+        <h3>Une chanson qui parle de vous</h3>
+        <p>Pour un anniversaire, un mariage, une fête des mères, une déclaration d'amour, un hommage ou un remerciement.</p>
+        <p>Le style musical et les détails sont discutés avec vous avant la réalisation. Toute référence à un artiste reste une inspiration de style, sans prétendre que l'artiste lui-même interprète la chanson.</p>
+        <a href="#devis" class="btn btn-primary">Commander ma chanson</a>
+      </div>
+      <div class="song-list">
+        <div class="song-row">
+          <div><strong>Extrait anniversaire</strong><small>Ajoutez votre fichier audio</small></div>
+          <audio controls preload="none">
+            <source src="audios/extrait-anniversaire.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+        <div class="song-row">
+          <div><strong>Extrait amour</strong><small>Ajoutez votre fichier audio</small></div>
+          <audio controls preload="none">
+            <source src="audios/extrait-amour.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+        <div class="song-row">
+          <div><strong>Extrait famille</strong><small>Ajoutez votre fichier audio</small></div>
+          <audio controls preload="none">
+            <source src="audios/extrait-famille.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+        <div class="song-row">
+          <div><strong>Extrait hommage</strong><small>Ajoutez votre fichier audio</small></div>
+          <audio controls preload="none">
+            <source src="audios/extrait-hommage.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+    </div>
+    <p class="form-note">Les lecteurs fonctionneront après l'ajout des fichiers MP3 correspondants au dépôt GitHub.</p>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="eyebrow">Nos savoir-faire</div>
+      <h2>Une idée ? Nous vous aidons à la réaliser.</h2>
+      <p>Des cadeaux personnels aux supports professionnels, découvrez l'ensemble des services de Rovano Studio.</p>
+    </div>
+    <div class="card-grid">
+      <article class="card service-card featured">
+        <div class="service-icon">♫</div><span class="tag">Notre spécialité</span>
+        <h3>Chansons personnalisées</h3>
+        <p>Une chanson construite autour d'un prénom, d'une histoire et d'un message pour un anniversaire, un mariage ou une autre occasion.</p>
+        <div class="price">Dès 3 000 FCFA</div>
+        <a class="btn btn-outline" href="#devis">Personnaliser</a>
+      </article>
+      <article class="card service-card">
+        <div class="service-icon">✍</div>
+        <h3>Poèmes personnalisés</h3>
+        <p>Un texte original pour exprimer l'amour, la gratitude, l'admiration ou un message que vous avez du mal à formuler.</p>
+        <div class="price">Prix sur devis</div>
+        <a class="btn btn-outline" href="#devis">Demander un prix</a>
+      </article>
+      <article class="card service-card">
+        <div class="service-icon">✦</div>
+        <h3>Création de logo</h3>
+        <p>Une identité visuelle adaptée à votre activité, votre nom de marque et l'image que vous souhaitez transmettre.</p>
+        <div class="price">Prix sur devis</div>
+        <a class="btn btn-outline" href="#devis">Parler de mon projet</a>
+      </article>
+      <article class="card service-card">
+        <div class="service-icon">▧</div>
+        <h3>Affiches publicitaires</h3>
+        <p>Des visuels conçus pour présenter une offre, annoncer un événement ou attirer l'attention sur vos produits.</p>
+        <div class="price">Dès 2 000 FCFA</div>
+        <a class="btn btn-outline" href="#devis">Créer une affiche</a>
+      </article>
+      <article class="card service-card">
+        <div class="service-icon">▤</div>
+        <h3>Flyers et présentation de produits</h3>
+        <p>Des supports visuels qui expliquent votre offre et rendent vos produits ou services plus faciles à comprendre.</p>
+        <div class="price">Prix sur devis</div>
+        <a class="btn btn-outline" href="#devis">Présenter mon produit</a>
+      </article>
+      <article class="card service-card">
+        <div class="service-icon">⌕</div>
+        <h3>Restauration de photos abîmées</h3>
+        <p>Une retouche destinée à améliorer une vieille photo et à préserver un souvenir familial précieux, selon l'état de l'original.</p>
+        <div class="price">Prix sur devis</div>
+        <a class="btn btn-outline" href="#devis">Restaurer une photo</a>
+      </article>
+      <article class="card service-card">
+        <div class="service-icon">▣</div>
+        <h3>Décoration de photos</h3>
+        <p>Ajout d'un cadre, d'un thème ou d'éléments décoratifs pour un anniversaire, une fête ou une occasion spéciale.</p>
+        <div class="price">Dès 1 500 FCFA</div>
+        <a class="btn btn-outline" href="#devis">Décorer ma photo</a>
+      </article>
+      <article class="card service-card">
+        <div class="service-icon">✉</div>
+        <h3>Cartes d'invitation</h3>
+        <p>Une invitation personnalisée pour un mariage, un anniversaire, une cérémonie ou une rencontre familiale.</p>
+        <div class="price">Prix sur devis</div>
+        <a class="btn btn-outline" href="#devis">Créer une invitation</a>
+      </article>
+      <article class="card service-card">
+        <div class="service-icon">☆</div>
+        <h3>Cartes de fidélité</h3>
+        <p>Un support pour aider votre commerce à remercier ses clients réguliers et à organiser un programme de fidélité.</p>
+        <div class="price">Prix sur devis</div>
+        <a class="btn btn-outline" href="#devis">Fidéliser mes clients</a>
+      </article>
+      <article class="card service-card">
+        <div class="service-icon">▱</div>
+        <h3>Cartes de visite</h3>
+        <p>Une présentation claire de votre nom, de votre activité et de vos coordonnées pour faciliter les contacts professionnels.</p>
+        <div class="price">Prix sur devis</div>
+        <a class="btn btn-outline" href="#devis">Créer ma carte</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="tarifs">
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="eyebrow">Tarifs indicatifs</div>
+      <h2>Choisissez votre création.</h2>
+      <p>Les tarifs ci-dessous sont ceux déjà définis pour nos offres principales. Pour les autres services, demandez un devis adapté à votre besoin.</p>
+    </div>
+    <div class="price-grid">
+      <article class="card price-card">
+        <h3>Chanson personnalisée</h3>
+        <div class="big-price">3 000 <small>FCFA</small></div>
+        <p>Une création personnalisée selon les informations que vous fournissez.</p>
+        <ul>
+          <li>Votre occasion et votre message</li>
+          <li>Prénom et détails à intégrer</li>
+          <li>Échange préalable sur votre demande</li>
+        </ul>
+        <a href="#devis" class="btn btn-outline">Choisir cette offre</a>
+      </article>
+      <article class="card price-card featured">
+        <span class="tag">OFFRE PREMIUM</span>
+        <h3>Chanson personnalisée Premium</h3>
+        <div class="big-price">7 000 <small>FCFA</small></div>
+        <p>Pour une demande plus élaborée, avec des options à confirmer avant la commande.</p>
+        <ul>
+          <li>Brief personnalisé</li>
+          <li>Discussion du style et du contenu</li>
+          <li>Options et délai confirmés par devis</li>
+        </ul>
+        <a href="#devis" class="btn btn-primary">Demander cette offre</a>
+      </article>
+    </div>
+    <div class="card" style="margin-top:18px">
+      <h3>Vous avez plusieurs besoins ?</h3>
+      <p>Décrivez-nous votre projet pour recevoir une proposition adaptée. Aucun tarif non confirmé ne sera présenté comme définitif.</p>
+      <a href="#devis" class="btn btn-outline">Demander un devis personnalisé</a>
+    </div>
+  </div>
+</section>
+
+<section id="comment">
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="eyebrow">Simple et personnalisé</div>
+      <h2>Comment ça marche ?</h2>
+    </div>
+    <div class="steps">
+      <article class="card">
+        <div class="step-number">01</div>
+        <h3>Vous racontez votre idée</h3>
+        <p>Expliquez l'occasion, le résultat souhaité, votre budget et la date importante.</p>
+      </article>
+      <article class="card">
+        <div class="step-number">02</div>
+        <h3>Nous clarifions la demande</h3>
+        <p>Nous confirmons le prix, les éléments inclus et le délai avant de commencer.</p>
+      </article>
+      <article class="card">
+        <div class="step-number">03</div>
+        <h3>Votre création prend vie</h3>
+        <p>La réalisation commence après accord sur les détails de la commande.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="avis">
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="eyebrow">Votre confiance compte</div>
+      <h2>Les avis de nos clients</h2>
+      <p>Nous souhaitons partager des retours authentiques de personnes ayant réellement utilisé nos services. Aucun témoignage fictif n'est affiché ici.</p>
+    </div>
+    <div class="review-box">
+      <div class="review-status">
+        <strong class="gold">Votre expérience nous intéresse.</strong>
+        <p>Vous avez déjà commandé une chanson ou une création chez Rovano Studio ? Vous pouvez nous transmettre votre avis. Après vérification et avec votre accord, il pourra être publié sur le site.</p>
+                                                                  
