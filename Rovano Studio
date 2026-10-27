@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Rovano Studio | Chansons personnalisées à Douala, Cameroun</title>
+<meta name="description" content="Rovano Studio crée des chansons personnalisées, logos, affiches et cadeaux uniques à Douala. Commande à distance via WhatsApp.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500;1,600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--n:#0a0907;--n2:#14110c;--l:#2b2619;--or:#d9b24c;--or2:#f3dc8d;--iv:#f7f2e6;--g:#b8b09d}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth}
+body{background:var(--n);color:var(--iv);font:400 17px/1.6 Outfit,system-ui,sans-serif;padding-top:env(safe-area-inset-top)}
+h1,h2,h3{font-family:"Cormorant Garamond",serif;line-height:1.1}
+.w{max-width:1120px;margin:auto;padding:0 20px}section{padding:70px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 26px;border-radius:999px;font:600 1rem Outfit;text-decoration:none;border:1.5px solid var(--or);cursor:pointer;color:var(--or2);background:none}
+.or{background:linear-gradient(135deg,var(--or2),var(--or));color:#1a1405}
+:focus-visible{outline:3px solid var(--or2);outline-offset:3px}
+.demo{background:var(--or);color:#1a1405;text-align:center;padding:7px 10px;font-size:.85rem;font-weight:600}
+header{position:sticky;top:0;z-index:20;background:rgba(10,9,7,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--l)}
+header .w{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{font:italic 600 1.9rem "Cormorant Garamond",serif;color:var(--or2);text-decoration:none}
+nav{display:flex;gap:20px;align-items:center}nav a{color:var(--g);text-decoration:none;font-size:.95rem}
+#bg{display:none;background:none;border:1px solid var(--l);color:var(--iv);width:46px;height:46px;border-radius:10px;font-size:1.4rem}
+@media(max-width:800px){#bg{display:block}nav{display:none;position:absolute;top:66px;left:0;right:0;flex-direction:column;background:var(--n);padding:16px 20px 24px;border-bottom:1px solid var(--l);align-items:stretch;text-align:center}nav.o{display:flex}nav a{padding:12px}}
+.hero{position:relative;overflow:hidden;padding:70px 0 40px;background:radial-gradient(circle at 78% 35%,#8a4a14 0,#3b2108 28%,var(--n) 62%)}
+.hero .w{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+.kick{color:var(--or);font-size:.85rem;letter-spacing:.14em;text-transform:uppercase}
+.hero h1{font-size:clamp(3.2rem,10vw,6rem);font-style:italic;color:var(--iv);margin:10px 0}
+.hero h2{font-size:clamp(1.5rem,4vw,2.1rem);font-weight:600}
+.hero p{color:var(--g);margin:16px 0 26px;max-width:46ch}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.conf{display:flex;flex-wrap:wrap;gap:22px;margin-top:34px;color:var(--g);font-size:.9rem}.conf b{color:var(--or2)}
+.hv svg{width:100%;height:auto;max-height:430px}
+.note{font:italic 500 1.6rem "Cormorant Garamond",serif;color:var(--or2);text-align:center;margin-top:6px}
+@media(max-width:800px){.hero .w{grid-template-columns:1fr}.hv{order:-1;max-width:320px;margin:auto}}
+h2.t{font-size:clamp(2rem,5vw,2.8rem);text-align:center}p.s{color:var(--g);text-align:center;margin:8px auto 34px;max-width:58ch}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.card{background:var(--n2);border:1px solid var(--l);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.card svg{width:100%;height:150px;display:block}
+.card .b{padding:16px;display:flex;flex-direction:column;gap:6px;flex:1}.card h3{font-size:1.4rem}.card p{color:var(--g);font-size:.92rem;flex:1}
+.px{color:var(--or2);font-weight:600}
+.iv{background:var(--iv);color:#17130a}.iv p.s{color:#5d5440}
+.st{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:22px;text-align:center}
+.st .c{width:76px;height:76px;margin:0 auto 12px;border:2px solid var(--or);border-radius:50%;display:grid;place-items:center;font:600 2rem "Cormorant Garamond",serif;color:#8a6a10}
+.st b{display:block}.st span{font-size:.9rem;color:#5d5440}
+.prod{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center;background:var(--n2);border:1px solid var(--l);border-radius:18px;padding:26px}
+.prod svg{width:100%;height:auto;border-radius:12px}
+.prod h2{font-size:2.3rem}.prod ul{color:var(--g);padding-left:20px;margin:12px 0 18px}
+.opt{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}.opt label{border:1px solid var(--l);border-radius:12px;padding:10px 14px;cursor:pointer}.opt input{accent-color:#d9b24c;margin-right:8px}
+@media(max-width:800px){.prod{grid-template-columns:1fr}}
+.pack{text-align:center;background:linear-gradient(180deg,var(--n2),#241a08);border-block:1px solid var(--l)}
+.occ{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:18px}.occ span{border:1px solid var(--l);border-radius:999px;padding:8px 16px;color:var(--g);font-size:.92rem}
+audio{width:100%;margin-top:6px}
+details{border-bottom:1px solid var(--l);padding:16px 0;max-width:760px;margin:auto}summary{cursor:pointer;font-weight:600;min-height:32px}details p{color:var(--g);margin-top:8px}
+.vide{color:var(--g);border:1px dashed var(--l);border-radius:12px;padding:20px;text-align:center}
+form{display:grid;gap:14px;max-width:640px;margin:auto}label.f{display:grid;gap:6px;color:var(--g);font-size:.95rem}
+input[type=text],input[type=date],select,textarea{background:var(--n2);border:1px solid var(--l);color:var(--iv);border-radius:10px;padding:13px;font:inherit;min-height:48px;width:100%}textarea{min-height:110px}
+.err{color:#ff9d8a}
+footer{padding:44px 0;border-top:1px solid var(--l);color:var(--g);font-size:.92rem}footer .w{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between}footer a{color:var(--or2)}
+.wa{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:20;box-shadow:0 6px 24px #000a}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto}}
+.pulse{animation:p 2.4s ease-in-out infinite;transform-origin:center}@keyframes p{50%{transform:scaleY(.55)}}
+</style></head><body>
+<header><div class="w"><a class="logo" href="#top">Rovano Studio</a><button id="bg" aria-label="Menu" aria-expanded="false">☰</button>
+<nav id="nav"><a href="#top">Accueil</a><a href="#services">Nos services</a><a href="#boutique">Boutique</a><a href="#faq">FAQ</a><a class="btn or" href="#commande">Commander</a></nav></div></header>
+<main id="top">
+<section class="hero"><div class="w"><div>
+<span class="kick">Votre histoire, notre création</span><h1>Rovano Studio</h1>
+<h2>Des chansons personnalisées pour chaque moment de votre vie</h2>
+<p>Chez Rovano Studio, à Douala, nous transformons vos émotions en chansons uniques, composées et produites spécialement pour vous. Où que vous soyez, vous commandez à distance.</p>
+<div class="cta"><a class="btn or" href="#commande" data-s="Chanson personnalisée">Créer ma chanson</a><a class="btn" href="#services">Découvrir nos services</a></div>
+<div class="conf"><span><b>✦</b> 100 % personnalisé</span><span><b>✦</b> Production studio</span><span><b>✦</b> Commande à distance</span></div></div>
+<div class="hv"><svg viewBox="0 0 400 420" role="img" aria-label="Micro de studio devant un soleil couchant"><defs><radialGradient id="sg"><stop offset="0" stop-color="#ffd27a"/><stop offset=".6" stop-color="#e0792b"/><stop offset="1" stop-color="#e0792b" stop-opacity="0"/></radialGradient><linearGradient id="mg" x1="0" x2="1"><stop offset="0" stop-color="#8d7a3a"/><stop offset=".5" stop-color="#f3dc8d"/><stop offset="1" stop-color="#7a6528"/></linearGradient></defs>
+<circle cx="230" cy="170" r="170" fill="url(#sg)" opacity=".85"/>
+<g stroke="#d9b24c" stroke-width="2" fill="none" opacity=".6"><circle cx="200" cy="160" r="120"/><circle cx="200" cy="160" r="150" opacity=".5"/></g>
+<rect x="150" y="60" width="100" height="150" rx="50" fill="#14110c" stroke="url(#mg)" stroke-width="4"/>
+<g stroke="#d9b24c" stroke-width="2" opacity=".7"><path d="M150 100h100M150 130h100M150 160h100M175 62v146M200 60v150M225 62v146"/></g>
+<path d="M120 150a80 80 0 0 0 160 0" fill="none" stroke="url(#mg)" stroke-width="5"/><path d="M200 230v90M140 330h120" stroke="url(#mg)" stroke-width="6" stroke-linecap="round"/>
+<g fill="#f3dc8d">
+<rect class="pulse" x="40" y="370" width="6" height="30" rx="3"/><rect class="pulse" x="56" y="360" width="6" height="50" rx="3" style="animation-delay:.2s"/><rect class="pulse" x="72" y="372" width="6" height="26" rx="3" style="animation-delay:.4s"/><rect class="pulse" x="88" y="356" width="6" height="58" rx="3" style="animation-delay:.1s"/><rect class="pulse" x="104" y="366" width="6" height="38" rx="3" style="animation-delay:.3s"/><rect class="pulse" x="120" y="374" width="6" height="22" rx="3"/><rect class="pulse" x="136" y="362" width="6" height="44" rx="3" style="animation-delay:.5s"/><rect class="pulse" x="152" y="370" width="6" height="30" rx="3" style="animation-delay:.2s"/><rect class="pulse" x="168" y="358" width="6" height="54" rx="3" style="animation-delay:.4s"/><rect class="pulse" x="184" y="368" width="6" height="34" rx="3"/><rect class="pulse" x="200" y="360" width="6" height="48" rx="3" style="animation-delay:.3s"/><rect class="pulse" x="216" y="372" width="6" height="26" rx="3" style="animation-delay:.1s"/><rect class="pulse" x="232" y="364" width="6" height="40" rx="3" style="animation-delay:.5s"/><rect class="pulse" x="248" y="370" width="6" height="30" rx="3"/><rect class="pulse" x="264" y="358" width="6" height="52" rx="3" style="animation-delay:.2s"/><rect class="pulse" x="280" y="368" width="6" height="34" rx="3" style="animation-delay:.4s"/><rect class="pulse" x="296" y="374" width="6" height="22" rx="3"/><rect class="pulse" x="312" y="362" width="6" height="44" rx="3" style="animation-delay:.3s"/><rect class="pulse" x="328" y="370" width="6" height="30" rx="3" style="animation-delay:.1s"/><rect class="pulse" x="344" y="366" width="6" height="38" rx="3" style="animation-delay:.5s"/></g></svg>
+<p class="note">Votre voix, notre inspiration</p></div></div></section>
+
+<section id="services"><div class="w"><h2 class="t">Nos services</h2><p class="s">Des créations uniques pour tous vos moments. Les prix affichés sont ceux confirmés par le studio.</p><div class="grid" id="sv"></div></div></section>
+
+<section class="iv"><div class="w"><h2 class="t">Comment ça marche ?</h2><p class="s">Une expérience simple, rapide et 100 % personnalisée.</p>
+<div class="st"><div><div class="c">1</div><b>Choisissez</b><span>Le type de création qui vous convient.</span></div><div><div class="c">2</div><b>Personnalisez</b><span>Racontez vos idées, vos envies, vos souvenirs.</span></div><div><div class="c">3</div><b>Nous créons</b><span>Notre équipe compose et produit votre création.</span></div><div><div class="c">4</div><b>Vous validez</b><span>Vous écoutez et demandez des ajustements.</span></div><div><div class="c">5</div><b>Recevez</b><span>Votre création vous est livrée, prête à partager.</span></div></div>
+<p style="text-align:center;margin-top:34px"><a class="btn or" href="#commande">Commander maintenant</a></p></div></section>
+
+<section id="boutique"><div class="w"><div class="prod"><div><svg viewBox="0 0 400 300" role="img" aria-label="Disque vinyle et soleil couchant"><rect width="400" height="300" fill="#1c1409"/><circle cx="130" cy="120" r="90" fill="#e0792b" opacity=".8"/><rect y="170" width="400" height="130" fill="#0a0907"/><circle cx="250" cy="150" r="110" fill="#0a0907" stroke="#d9b24c" stroke-width="2"/><circle cx="250" cy="150" r="80" fill="none" stroke="#2b2619" stroke-width="10"/><circle cx="250" cy="150" r="40" fill="#d9b24c"/><circle cx="250" cy="150" r="6" fill="#0a0907"/><path d="M95 205c20-14 30-14 45 0M105 165a18 18 0 1 1 25 0" fill="none" stroke="#f3dc8d" stroke-width="5" stroke-linecap="round"/></svg></div>
+<div><span class="kick">Notre produit signature</span><h2>Chanson personnalisée</h2><p style="color:var(--g)">La plus belle façon de dire « je t'aime », de fêter quelqu'un ou de rendre hommage. Écrite pour une seule personne.</p>
+<ul><li>Composée à partir de votre histoire</li><li>Paroles et musique sur mesure</li><li>Ajustements possibles après écoute</li></ul>
+<div class="opt"><label><input type="radio" name="o" checked data-s="Chanson simple">Simple <span class="px">3 000 FCFA</span></label><label><input type="radio" name="o" data-s="Chanson premium">Premium <span class="px">7 000 FCFA</span></label></div>
+<a class="btn or" href="#commande" id="go">Commander cette chanson</a></div></div></div></section>
+
+<section class="pack"><div class="w"><h2 class="t">Le Pack émotionnel</h2><p class="s">Offrez une émotion, pas simplement un cadeau. Une création personnalisée qui raconte une histoire et rend un moment inoubliable.</p>
+<div class="occ"><span>Chanson personnalisée</span><span>Décoration de photos</span><span>Carte d'invitation</span><span>Retouche de photos abîmées</span></div>
+<p style="margin-top:26px"><a class="btn or" href="#commande" data-s="Pack émotionnel (demande d'informations)">Demander des informations</a></p></div></section>
+
+<section><div class="w"><h2 class="t">Écoutez nos exemples</h2><p class="s">Pour entendre ce que donne une chanson personnalisée.</p><div class="grid" id="au"><p class="vide">Vos exemples audio apparaîtront ici dès que vous les aurez ajoutés depuis le tableau de bord.</p></div>
+<div class="occ"><span>Anniversaires</span><span>Mariages</span><span>Couples</span><span>Fêtes de famille</span><span>Surprises</span><span>Hommages</span></div></div></section>
+
+<section id="faq" style="background:var(--n2)"><div class="w"><h2 class="t">Questions fréquentes</h2><p class="s">Exemples de démonstration : vous rédigerez vos vraies réponses.</p>
+<details><summary>Combien de temps pour recevoir ma création ?</summary><p>Le délai sera précisé par le studio selon la prestation.</p></details>
+<details><summary>Comment se passe le paiement ?</summary><p>Le paiement se confirme directement avec le studio après votre demande.</p></details>
+<details><summary>Puis-je commander à distance ?</summary><p>Oui, les commandes se font à distance via WhatsApp.</p></details></div></section>
+
+<section id="commande"><div class="w"><h2 class="t">Passer commande</h2><p class="s">Remplissez le formulaire : WhatsApp s'ouvre avec votre message prêt à envoyer.</p>
+<form id="f" novalidate><label class="f">Prestation<select id="fs"></select></label><label class="f">Occasion<input type="text" id="fo" placeholder="Anniversaire, mariage, hommage…"></label><label class="f">Pour qui ?<input type="text" id="fd" placeholder="Prénom et lien avec vous"></label><label class="f">Souvenirs et messages importants<textarea id="fm"></textarea></label><label class="f">Style musical souhaité<input type="text" id="fy"></label><label class="f">Date souhaitée<input type="date" id="fa"></label><label class="f">Votre nom<input type="text" id="fn" autocomplete="name"></label><p class="err" id="er" role="alert"></p><button class="btn or" type="submit">Vérifier et ouvrir WhatsApp</button></form></div></section>
+</main>
+<footer><div class="w"><div><b class="logo" style="font-size:1.6rem">Rovano Studio</b><br>Vos idées prennent vie<br>Douala, Cameroun</div><div>WhatsApp : +237 670 941 644<br><a href="mailto:rovanostudio@gmail.com">rovanostudio@gmail.com</a><br>Facebook : Rovano Studio</div><div>© <span id="an"></span> Rovano Studio</div></div></footer>
+<a class="btn or wa" id="w2" href="#">WhatsApp</a>
+<script>
+const $=s=>document.querySelector(s),N="237670941644",wa=t=>`https://wa.me/${N}?text=${encodeURIComponent(t)}`;
+const S=[["Chanson simple","Une chanson personnalisée écrite à partir de votre histoire.",3000,"#e0792b"],["Chanson premium","Une chanson avec une production plus travaillée.",7000,"#b8541c"],["Décoration de photo","Vos photos habillées pour vos événements.",1500,"#8c6d1f"],["Affiche publicitaire","Une affiche claire et soignée pour votre activité.",2000,"#a33"],["Pack commercial","Chanson premium, décoration d'image 4K, affiches et impression de photos.",12000,"#d9b24c"],["Création de logo","Un logo professionnel pour votre marque.",0,"#5a6b7a"],["Carte d'invitation","Des invitations élégantes pour vos événements.",0,"#6b4a7a"],["Poème personnalisé","Des mots écrits pour une personne précise.",0,"#3f6b4f"]];
+const px=p=>p?p.toLocaleString("fr-FR")+" FCFA":"Sur devis";
+$("#sv").innerHTML=S.map(s=>`<article class="card"><svg viewBox="0 0 300 150" role="img" aria-label="${s[0]}"><defs><radialGradient id="g${s[3].slice(1)}"><stop offset="0" stop-color="${s[3]}"/><stop offset="1" stop-color="#14110c"/></radialGradient></defs><rect width="300" height="150" fill="url(#g${s[3].slice(1)})"/><g fill="none" stroke="#f3dc8d" stroke-width="3" stroke-linecap="round" opacity=".85"><path d="M100 95V55l60-12v40"/><circle cx="90" cy="98" r="11"/><circle cx="150" cy="86" r="11"/></g></svg><div class="b"><h3>${s[0]}</h3><p>${s[1]}</p><span class="px">${px(s[2])}</span><a class="btn" href="#commande" data-s="${s[0]}">Commander</a></div></article>`).join("");
+$("#fs").innerHTML=S.map(s=>`<option>${s[0]}</option>`).join("")+"<option>Pack émotionnel (demande d'informations)</option>";
+const pick=v=>{$("#fs").value=v};
+document.addEventListener("click",e=>{const a=e.target.closest("[data-s]");if(a&&a.tagName==="A")pick(a.dataset.s)});
+$("#go").onclick=()=>pick(document.querySelector("input[name=o]:checked").dataset.s);
+$("#w2").href=wa("Bonjour Rovano Studio, je voudrais des informations.");
+$("#bg").onclick=e=>{e.currentTarget.setAttribute("aria-expanded",$("#nav").classList.toggle("o"))};$("#nav").onclick=()=>$("#nav").classList.remove("o");
+$("#an").textContent=new Date().getFullYear();
+$("#f").onsubmit=e=>{e.preventDefault();const n=$("#fn").value.trim();if(!n){$("#er").textContent="Indiquez votre nom pour continuer.";return}$("#er").textContent="";
+const s=S.find(x=>x[0]===$("#fs").value),l=[["Prestation",$("#fs").value],["Prix affiché",s?px(s[2]):""],["Occasion",$("#fo").value],["Destinataire",$("#fd").value],["Souvenirs",$("#fm").value],["Style musical",$("#fy").value],["Date souhaitée",$("#fa").value],["Nom",n]].filter(x=>x[1].trim());
+const m="Bonjour Rovano Studio, je souhaite passer commande :\n"+l.map(x=>`- ${x[0]} : ${x[1]}`).join("\n");if(confirm("Votre message :\n\n"+m+"\n\nOuvrir WhatsApp ?"))window.open(wa(m),"_blank","noopener")};
+</script></body></html>
