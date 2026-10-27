@@ -1,0 +1,288 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0b0b">
+<meta name="description" content="Rovano Studio transforme vos histoires et vos sentiments en chansons personnalisées et créations graphiques.">
+<title>Rovano Studio — Vos idées prennent vie</title>
+<style>
+:root{--bg:#0b0b0b;--panel:#151515;--gold:#d8b66a;--gold2:#f2d995;--text:#f8f5ed;--muted:#b9b5ab;--line:#39342a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.65}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;object-fit:cover}
+.wrap{width:min(1160px,90%);margin:auto}
+.topbar{position:sticky;top:0;z-index:10;background:rgba(11,11,11,.96);border-bottom:1px solid var(--line)}
+.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.brand{font-size:20px;font-weight:900;letter-spacing:1.5px}
+.brand span,.gold{color:var(--gold2)}
+.navlinks{display:flex;gap:20px;flex-wrap:wrap;font-size:13px}
+.navlinks a:hover{color:var(--gold2)}
+.btn{display:inline-block;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#111;font-weight:800;border:1px solid var(--gold);border-radius:5px;padding:12px 18px;margin:4px}
+.btn.outline{background:transparent;color:white;border-color:#777}
+.eyebrow{color:var(--gold2);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:3px}
+.hero{min-height:570px;display:flex;align-items:center;background:linear-gradient(90deg,rgba(8,8,8,.97),rgba(8,8,8,.78) 55%,rgba(8,8,8,.35)),url('https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1800&q=85') center/cover}
+.hero-content{max-width:720px;padding:75px 0}
+.hero h1{font-size:clamp(38px,6vw,68px);line-height:1.05;margin:18px 0}
+.hero p{max-width:650px;color:#e0ddd5;font-size:17px}
+.trust{margin-top:24px;color:#d3cfc5;font-size:12px}
+.trust span{margin-right:14px}
+.section{padding:72px 0}
+.alt{background:#111}
+.head{text-align:center;max-width:760px;margin:0 auto 36px}
+.head h2{font-size:clamp(29px,4vw,43px);line-height:1.15;margin:12px 0}
+.head p,.muted{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.card{border:1px solid var(--line);background:linear-gradient(150deg,#191816,#111);border-radius:8px;overflow:hidden}
+.card img{height:200px}
+.cardbody{padding:20px}
+.card h3{margin:4px 0 8px;font-size:20px}
+.card p{font-size:14px;color:var(--muted)}
+.price{font-size:20px;color:var(--gold2);font-weight:900}
+.pill{display:inline-block;border:1px solid #67562f;color:var(--gold2);border-radius:99px;padding:4px 9px;font-size:10px;text-transform:uppercase;letter-spacing:1px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.step{padding:20px;background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--gold)}
+.step strong{display:block;color:var(--gold2);font-size:18px}
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.service{border:1px solid var(--line);background:var(--panel);border-radius:7px;overflow:hidden}
+.service img{height:145px}
+.servicebody{padding:14px}
+.service h3{font-size:15px;line-height:1.3;margin:0 0 7px}
+.service p{font-size:12px;color:var(--muted);margin:0 0 10px}
+.small{font-size:12px;color:#aaa69b}
+.notice{margin-top:20px;border:1px dashed #65542f;background:#17150f;padding:20px;border-radius:7px;text-align:center;color:#d9d0bd}
+.cta{text-align:center;padding:70px 0;background:radial-gradient(ellipse at top,#332918,#10100f 65%);border-block:1px solid #40351e}
+.cta h2{font-size:clamp(30px,4vw,44px);line-height:1.15}
+.cta p{max-width:650px;margin:0 auto 22px;color:var(--muted)}
+footer{padding:28px 0;color:#aaa69b;font-size:12px}
+.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer strong{color:var(--gold2)}
+@media(max-width:850px){
+.grid{grid-template-columns:1fr 1fr}
+.services{grid-template-columns:1fr 1fr}
+.steps{grid-template-columns:1fr}
+.hero{background-position:60% center}
+}
+@media(max-width:560px){
+.nav{padding:12px 0}
+.brand{font-size:17px}
+.navlinks{order:3;width:100%;gap:16px;overflow-x:auto}
+.navlinks a{white-space:nowrap;font-size:12px}
+.hero{min-height:540px;background-position:58% center}
+.hero-content{padding:55px 0}
+.hero h1{font-size:41px}
+.hero p{font-size:15px}
+.section{padding:52px 0}
+.grid{grid-template-columns:1fr}
+.services{gap:9px}
+.service img{height:115px}
+.servicebody{padding:11px}
+.service h3{font-size:13px}
+.service p{font-size:11px}
+.card img{height:220px}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+<div class="wrap nav">
+<a class="brand" href="#accueil">ROVANO <span>STUDIO</span></a>
+<nav class="navlinks">
+<a href="#chansons">Chansons</a>
+<a href="#exemples">Exemples</a>
+<a href="#services">Services</a>
+<a href="#comment">Comment ça marche</a>
+</nav>
+<a class="btn" href="https://wa.me/237670941644?text=Bonjour%20Rovano%20Studio%2C%20je%20souhaite%20commander.">Commander ↗</a>
+</div>
+</header>
+
+<main>
+<section class="hero" id="accueil">
+<div class="wrap">
+<div class="hero-content">
+<div class="eyebrow">Vos idées prennent vie · Douala, Cameroun</div>
+<h1>Votre histoire mérite une chanson <span class="gold">unique.</span></h1>
+<p>Imaginez votre proche entendre son prénom dans une chanson créée pour lui, inspirée de votre histoire, de vos meilleurs souvenirs et de vos sentiments. Offrez plus qu’un cadeau : une émotion personnelle.</p>
+<a class="btn" href="#chansons">Découvrir les chansons</a>
+<a class="btn outline" href="#services">Voir toutes nos créations</a>
+<div class="trust">
+<span>✦ Personnalisé pour vous</span>
+<span>✦ Toutes les occasions</span>
+<span>✦ Commande WhatsApp</span>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" id="chansons">
+<div class="wrap">
+<div class="head">
+<div class="eyebrow">Notre création phare</div>
+<h2>Un prénom. Une histoire. <span class="gold">Une émotion.</span></h2>
+<p>Nous construisons votre chanson autour de la personne que vous voulez célébrer : son prénom, vos souvenirs, vos messages et l’occasion qui compte pour vous.</p>
+</div>
+<div class="grid">
+<article class="card">
+<img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=900&q=80" alt="Ambiance musicale">
+<div class="cardbody">
+<span class="pill">Formule essentielle</span>
+<h3>Chanson personnalisée</h3>
+<p>Un texte adapté à votre histoire, au prénom de la personne et au message que vous souhaitez transmettre.</p>
+<div class="price">3 000 FCFA</div>
+<p class="small">Détails et options confirmés avant la commande.</p>
+<a class="btn" href="https://wa.me/237670941644?text=Bonjour%2C%20je%20souhaite%20commander%20une%20chanson%20personnalisee%20a%203000%20FCFA.">Commander</a>
+</div>
+</article>
+<article class="card">
+<img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80" alt="Célébration spéciale">
+<div class="cardbody">
+<span class="pill">Formule avancée</span>
+<h3>Chanson Premium</h3>
+<p>Une expérience plus complète, avec les options supplémentaires convenues avec vous.</p>
+<div class="price">7 000 FCFA</div>
+<p class="small">Le contenu exact est confirmé avec Rovano Studio.</p>
+<a class="btn" href="https://wa.me/237670941644?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20la%20chanson%20Premium%20a%207000%20FCFA.">Choisir Premium</a>
+</div>
+</article>
+<article class="card">
+<img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=900&q=80" alt="Proches réunis">
+<div class="cardbody">
+<span class="pill">Toutes les occasions</span>
+<h3>Un cadeau chargé de sens</h3>
+<p>Anniversaire, amour, mariage, baptême, famille, amitié, gratitude ou surprise.</p>
+<a class="btn" href="https://wa.me/237670941644?text=Bonjour%20Rovano%20Studio%2C%20je%20souhaite%20creer%20une%20chanson%20personnalisee.">Imaginer ma chanson</a>
+</div>
+</article>
+</div>
+</div>
+</section>
+
+<section class="section alt" id="exemples">
+<div class="wrap">
+<div class="head">
+<div class="eyebrow">Exemples par occasion</div>
+<h2>Des chansons pour les moments <span class="gold">qui comptent.</span></h2>
+<p>Découvrez les occasions pour lesquelles nous pouvons créer une chanson personnalisée.</p>
+</div>
+<div class="grid">
+<article class="card">
+<img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80" alt="Amour et mariage">
+<div class="cardbody"><h3>Amour & couple</h3><p>Déclarations, anniversaires de couple, mariages et surprises romantiques.</p></div>
+</article>
+<article class="card">
+<img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=900&q=80" alt="Anniversaire">
+<div class="cardbody"><h3>Anniversaires</h3><p>Prénom, souvenirs, qualités et vœux des proches.</p></div>
+</article>
+<article class="card">
+<img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=900&q=80" alt="Famille réunie">
+<div class="cardbody"><h3>Famille & parents</h3><p>Hommages à maman, papa, aux enfants et aux proches.</p></div>
+</article>
+<article class="card">
+<img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=900&q=80" alt="Cérémonie">
+<div class="cardbody"><h3>Mariages & cérémonies</h3><p>Mariage, baptême, fiançailles, réussite et autres événements.</p></div>
+</article>
+<article class="card">
+<img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=80" alt="Amis">
+<div class="cardbody"><h3>Amitié & gratitude</h3><p>Remerciements, encouragements et surprises.</p></div>
+</article>
+<article class="card">
+<img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=80" alt="Événement festif">
+<div class="cardbody"><h3>Autres occasions</h3><p>Expliquez-nous votre projet : nous étudierons votre idée ensemble.</p></div>
+</article>
+</div>
+<div class="notice"><strong class="gold">Prochaine étape :</strong> ajouter les vrais extraits audio de Rovano Studio à cette galerie.</div>
+</div>
+</section>
+
+<section class="section" id="comment">
+<div class="wrap">
+<div class="head">
+<div class="eyebrow">Simple et personnalisé</div>
+<h2>Comment votre idée devient-elle un cadeau musical ?</h2>
+<p>Vous nous racontez ce que vous souhaitez transmettre. Nous définissons ensemble les détails avant la création.</p>
+</div>
+<div class="steps">
+<div class="step"><strong>01 — Vous expliquez</strong>Partagez l’occasion, le prénom, les souvenirs et le message à transmettre.</div>
+<div class="step"><strong>02 — Nous préparons</strong>Nous définissons ensemble le style, les options, le prix et le délai.</div>
+<div class="step"><strong>03 — Vous recevez</strong>Votre création est livrée selon les modalités confirmées à la commande.</div>
+</div>
+</div>
+</section>
+
+<section class="section alt" id="services">
+<div class="wrap">
+<div class="head">
+<div class="eyebrow">Au-delà de la musique</div>
+<h2>Toutes les créations <span class="gold">Rovano Studio</span></h2>
+<p>Découvrez nos services. Les prix non indiqués sont communiqués sur demande.</p>
+</div>
+<div class="services">
+<article class="service">
+<img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=700&q=80" alt="Chansons personnalisées">
+<div class="servicebody"><h3>Chansons personnalisées</h3><p>Des chansons pour vos événements et vos proches.</p><span class="price">Dès 3 000 F</span></div>
+</article>
+<article class="service">
+<img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=700&q=80" alt="Poème personnalisé">
+<div class="servicebody"><h3>Poèmes personnalisés</h3><p>Des mots inspirés de vos sentiments.</p><span class="small">Prix sur demande</span></div>
+</article>
+<article class="service">
+<img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=700&q=80" alt="Logo professionnel">
+<div class="servicebody"><h3>Logos professionnels</h3><p>Une identité visuelle pour votre activité.</p><span class="small">Prix sur demande</span></div>
+</article>
+<article class="service">
+<img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&w=700&q=80" alt="Affiche publicitaire">
+<div class="servicebody"><h3>Affiches publicitaires</h3><p>Des visuels pour vos offres et événements.</p><span class="price">Dès 2 000 F</span></div>
+</article>
+<article class="service">
+<img src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?auto=format&fit=crop&w=700&q=80" alt="Flyer et présentation de produit">
+<div class="servicebody"><h3>Flyers & présentation de produits</h3><p>Des supports visuels pour vos produits et services.</p><span class="small">Prix sur demande</span></div>
+</article>
+<article class="service">
+<img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=700&q=80" alt="Restauration de photo">
+<div class="servicebody"><h3>Restauration de photos abîmées</h3><p>Améliorer la présentation de vos photos précieuses.</p><span class="small">Prix sur demande</span></div>
+</article>
+<article class="service">
+<img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=700&q=80" alt="Décoration de photo">
+<div class="servicebody"><h3>Décoration de photos</h3><p>Des compositions pour fêtes et événements.</p><span class="price">Dès 1 500 F</span></div>
+</article>
+<article class="service">
+<img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=80" alt="Carte d'invitation">
+<div class="servicebody"><h3>Cartes d’invitation</h3><p>Des invitations pour vos cérémonies.</p><span class="small">Prix sur demande</span></div>
+</article>
+<article class="service">
+<img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=700&q=80" alt="Carte de fidélité">
+<div class="servicebody"><h3>Cartes de fidélité</h3><p>Des supports pour encourager le retour des clients.</p><span class="small">Prix sur demande</span></div>
+</article>
+<article class="service">
+<img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=700&q=80" alt="Carte de visite">
+<div class="servicebody"><h3>Cartes de visite</h3><p>Présentez vos coordonnées professionnellement.</p><span class="small">Prix sur demande</span></div>
+</article>
+</div>
+</div>
+</section>
+
+<section class="cta" id="commande">
+<div class="wrap">
+<div class="eyebrow">Votre idée mérite de prendre vie</div>
+<h2>Quel souvenir voulez-vous transformer en cadeau ?</h2>
+<p>Parlons de votre projet. Expliquez-nous l’occasion, la personne à célébrer et le message que vous souhaitez transmettre.</p>
+<a class="btn" href="https://wa.me/237670941644?text=Bonjour%20Rovano%20Studio%2C%20je%20souhaite%20commander%20une%20creation%20personnalisee.">Commander sur WhatsApp ↗</a>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap foot">
+<div><strong>ROVANO STUDIO</strong> — Vos idées prennent vie.</div>
+<div>Créations personnalisées · Douala, Cameroun</div>
+<div>© 2026 Rovano Studio</div>
+</div>
+</footer>
+
+</body>
+</html>
